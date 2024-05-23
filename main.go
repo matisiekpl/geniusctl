@@ -3,13 +3,14 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/antchfx/htmlquery"
-	"golang.org/x/term"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
 	"strings"
+
+	"github.com/antchfx/htmlquery"
+	"golang.org/x/term"
 )
 
 var Reset = "\033[0m"
@@ -104,6 +105,14 @@ func search(query string) Song {
 	responseData, _ := ioutil.ReadAll(resp.Body)
 	var result SearchResponse
 	json.Unmarshal(responseData, &result)
+	if len(result.Response.Sections) < 2 {
+		fmt.Println(Red + "Song not found")
+		os.Exit(1)
+	}
+	if len(result.Response.Sections[1].Hits) < 1 {
+		fmt.Println(Red + "Song not found")
+		os.Exit(1)
+	}
 	return result.Response.Sections[1].Hits[0].Result
 }
 
