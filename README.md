@@ -1,6 +1,6 @@
 <div align="center">
 
-# Genius CLI 🎸
+# GeniusCTL 🎸
 
 Minimal CLI for printing lyrics to `stdout`
 
@@ -9,14 +9,16 @@ Minimal CLI for printing lyrics to `stdout`
 </div>
 
 ## Instalation
-Download executable binary from [releases](https://github.com/matisiekpl/genius-cli/releases/tag/v1.0.0) and put it to `path`
+```bash
+go install github.com/matisiekpl/geniusctl@latest
+```
 
 ## Usage
 ```bash
-./genius-linux-amd64 <query>
+geniusctl <query>
 
 # For example:
-./genius-linux-amd64 never gonna give you up rick astley
+geniusctl never gonna give you up rick astley
 ```
 
 ## About
