@@ -1,6 +1,6 @@
-module genius-cli
+module github.com/matisiekpl/geniusctl
 
-go 1.18
+go 1.22
 
 require (
 	github.com/daskol/go.lyrics v0.0.0-20180928141243-b7299ce62709
